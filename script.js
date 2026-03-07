@@ -8,3 +8,9 @@ const phrases = [
 
 const hello = "Привіт!";
 const goodbye = "До побачення!";
+
+$("h1").css("color", "blue");
+
+$("#chatbot").click(function () {
+  $(this).toggleClass("show");
+});
