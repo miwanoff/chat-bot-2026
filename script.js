@@ -14,3 +14,19 @@ $("h1").css("color", "blue");
 $("#chatbot").click(function () {
   $(this).toggleClass("show");
 });
+
+$("#answers").append(`<div class="bot_answ">${hello}</div>`);
+
+$("#answers").click(function () {
+  return false;
+});
+
+$("#question").click(function () {
+  return false;
+});
+
+$("#ok").click(function () {
+  return false;
+});
+
+
