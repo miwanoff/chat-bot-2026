@@ -17,7 +17,6 @@ $("#chatbot").click(function () {
 
 $("#answers").append(`<div class="bot_answ">${hello}</div>`);
 
-
 // stopPropagation()
 $("#answers").click(function () {
   return false;
@@ -28,5 +27,21 @@ $("#question").click(function () {
 });
 
 $("#ok").click(function () {
+  let q = $("#question").val().trim();
+  // console.log(q);
+  $("#question").val("");
+  if (q !== "") {
+    $("#answers").append(`<div class="human_answ">${q}</div>`);
+    if (
+      q.toLowerCase().includes("bye") ||
+      q.toLowerCase().includes("побачення") ||
+      q.toLowerCase().includes("пока") ||
+      q.toLowerCase().includes("попа")
+    ) {
+      $("#answers").append(`<div class="bot_answ">${goodbye}</div>`);
+    } else {
+      $("#answers").append(`<div class="bot_answ">${phrases[0]}</div>`);
+    }
+  }
   return false;
 });
