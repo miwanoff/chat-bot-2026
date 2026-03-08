@@ -44,6 +44,13 @@ $("#ok").click(function () {
       } else {
         $("#answers").append(`<div class="bot_answ">${phrases[0]}</div>`);
       }
+      const chatBot = document.getElementById("chatbot");
+      $("#chatbot").animate(
+        {
+          scrollTop: chatBot.scrollHeight - chatBot.clientHeight,
+        },
+        100,
+      );
     }, 1000);
   }
   return false;
