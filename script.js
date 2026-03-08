@@ -17,6 +17,8 @@ $("#chatbot").click(function () {
 
 $("#answers").append(`<div class="bot_answ">${hello}</div>`);
 
+
+// stopPropagation()
 $("#answers").click(function () {
   return false;
 });
@@ -28,5 +30,3 @@ $("#question").click(function () {
 $("#ok").click(function () {
   return false;
 });
-
-
