@@ -32,16 +32,19 @@ $("#ok").click(function () {
   $("#question").val("");
   if (q !== "") {
     $("#answers").append(`<div class="human_answ">${q}</div>`);
-    if (
-      q.toLowerCase().includes("bye") ||
-      q.toLowerCase().includes("побачення") ||
-      q.toLowerCase().includes("пока") ||
-      q.toLowerCase().includes("попа")
-    ) {
-      $("#answers").append(`<div class="bot_answ">${goodbye}</div>`);
-    } else {
-      $("#answers").append(`<div class="bot_answ">${phrases[0]}</div>`);
-    }
+
+    setTimeout(function () {
+      if (
+        q.toLowerCase().includes("bye") ||
+        q.toLowerCase().includes("побачення") ||
+        q.toLowerCase().includes("пока") ||
+        q.toLowerCase().includes("попа")
+      ) {
+        $("#answers").append(`<div class="bot_answ">${goodbye}</div>`);
+      } else {
+        $("#answers").append(`<div class="bot_answ">${phrases[0]}</div>`);
+      }
+    }, 1000);
   }
   return false;
 });
